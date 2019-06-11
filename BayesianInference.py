@@ -2,6 +2,7 @@ import numpy as np
 from scipy.stats import beta
 import matplotlib.pyplot as plt
 
+ACTUAL_PROBABILITY= 0.5
 class CoinToss:
     def __init__(self):
         self.alpha = 1
@@ -29,3 +30,6 @@ for i in range(1000000):
         j += 1
         plot()
 
+mean = c.alpha/(c.alpha+c.beta)
+accuracy = (mean / ACTUAL_PROBABILITY) * 100
+print(accuracy)
